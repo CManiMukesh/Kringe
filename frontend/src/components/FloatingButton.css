@@ -1,0 +1,46 @@
+.fab {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid #111111;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  z-index: 200;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.fab:hover {
+  background: #f2f2f2;
+  transform: scale(1.05);
+}
+
+.fab:active {
+  transform: scale(0.96);
+}
+
+.fab-icon {
+  font-size: 2rem;
+  font-weight: 300;
+  color: #111111;
+  line-height: 1;
+}
+
+@media (max-width: 480px) {
+  .fab {
+    width: 48px;
+    height: 48px;
+    bottom: 1rem;
+    right: 1rem;
+  }
+  
+  .fab-icon {
+    font-size: 1.8rem;
+  }
+}

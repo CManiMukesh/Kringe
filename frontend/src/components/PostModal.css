@@ -1,0 +1,157 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  overflow-x: hidden;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease;
+}
+
+.modal-content {
+  background: #ffffff;
+  width: min(90%, 500px);
+  max-width: calc(100vw - 2rem);
+  min-width: 0;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  animation: slideUp 0.25s ease;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.2rem;
+  border-bottom: 1px solid #1f1f1f;
+}
+
+.modal-title {
+  font-family: monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.15rem;
+  color: #111111;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  color: #111111;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0 0.3rem;
+  transition: color 0.2s;
+}
+
+.modal-close:hover {
+  color: #444444;
+}
+
+.modal-textarea {
+  width: 100%;
+  max-width: calc(100vw - 3.5rem);
+  min-width: 0;
+  min-height: 180px;
+  padding: 1.2rem;
+  background: #f8f8f8;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: #111111;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  resize: vertical;
+  outline: none;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.modal-textarea::placeholder {
+  color: #3a3a3a;
+  font-style: italic;
+}
+
+.modal-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.8rem 1.2rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  min-width: 0;
+}
+
+.char-counter {
+  font-family: monospace;
+  font-size: 0.7rem;
+  color: #444444;
+}
+
+.char-warning {
+  color: #ff8844;
+}
+
+.modal-submit {
+  background: #ffffff;
+  border: 1px solid #111111;
+  padding: 0.5rem 1.5rem;
+  font-family: monospace;
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: #111111;
+}
+
+.modal-submit:hover:not(:disabled) {
+  background: #111111;
+  color: #ffffff;
+  transform: scale(0.98);
+}
+
+.modal-submit:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-content {
+    width: 95%;
+  }
+  
+  .modal-textarea {
+    min-height: 160px;
+    font-size: 0.95rem;
+  }
+  
+  .modal-submit {
+    padding: 0.4rem 1.2rem;
+  }
+}
